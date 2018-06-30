@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { View, FlatList, StyleSheet, Alert, TouchableOpacity, Image, ScrollView } from 'react-native';
+import { Font } from "expo";
 import { connect } from "react-redux";
 import CardFriendDistance from '../../items/cardFriendDistance'
 
@@ -14,6 +15,9 @@ class FriendInEvent extends Component {
         }
     }
     componentDidMount() {
+        Font.loadAsync({
+            'kanit': require('../../../assets/fonts/Kanit-Light.ttf'),
+        });
         this.setState({
             dataSource: this.props.friendlist.friendRegis
         });
@@ -107,7 +111,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center'
     },
     textLabelSize: {
-        fontFamily: 'Kanit'
+        fontFamily: 'kanit'
     },
     dropdownstyle: {
         flexDirection: 'column',

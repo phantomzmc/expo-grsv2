@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, TouchableOpacity } from "react-native";
+import { Font } from "expo";
 import CheckBox from 'react-native-checkbox-heaven';
 import { Container, Header, Title, Content, Button, Icon, Card, CardItem, Text, Body, Left, Right, IconNB } from "native-base";
 import axios from 'axios'
@@ -21,6 +22,9 @@ class GetPleace extends Component {
     }
 
     componentDidMount() {
+        Font.loadAsync({
+            'kanit': require('../../assets/fonts/Kanit-Light.ttf'),
+        });
         this.setState({
             pleace : this.props.detailPleace
         })
@@ -114,11 +118,11 @@ const styles = StyleSheet.create({
         fontWeight: '500',
         fontSize: 15,
         color: '#fff',
-        fontFamily: 'Kanit',
+        fontFamily: 'kanit',
     },
     labelStyle: {
         padding: 20,
-        fontFamily: "kanit",
+        fontFamily: 'kanit',
         fontSize: 16
     },
     checkSubmit: {

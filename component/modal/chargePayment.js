@@ -1,17 +1,23 @@
 import React, { Component } from 'react';
 import { StyleSheet, View } from "react-native";
 import { Spinner, Icon, Text, Thumbnail } from "native-base";
+import { Font } from "expo";
 
 class ChargePayment extends Component {
     state = {
         layout_success: true
+    }
+    componentDidMount(){
+        Font.loadAsync({
+            'kanit': require('../../assets/fonts/Kanit-Light.ttf'),
+        });
     }
     render() {
         return (
             <View style={styles.modalContainer}>
                 <View style={{ flexDirection: "row" }}>
                     <Icon name="check-circle" type="FontAwesome" style={{ color: "#558B2F", paddingHorizontal: 10 }} />
-                    <Text style={{ fontSize: 18, fontFamily: "kanit", color: "#558B2F" }}>ชำระเงินสำเร็จ</Text>
+                    <Text style={{ fontSize: 18, fontFamily: 'kanit', color: "#558B2F" }}>ชำระเงินสำเร็จ</Text>
                 </View>
             </View>
         );

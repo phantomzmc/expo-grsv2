@@ -20,7 +20,7 @@ var myTabs = TabNavigator({
             },
             headerTitleStyle: {
                 color: '#fff',
-                fontFamily: "Kanit",
+                // fontFamily: "Kanit",
                 fontWeight: '500',
             },
         },
@@ -35,7 +35,7 @@ var myTabs = TabNavigator({
             },
             headerTitleStyle: {
                 color: '#fff',
-                fontFamily: "Kanit",
+                // fontFamily: "Kanit",
                 fontWeight: '500',
             }
         }
@@ -49,7 +49,7 @@ var myTabs = TabNavigator({
             },
             headerTitleStyle: {
                 color: '#fff',
-                fontFamily: "Kanit",
+                // fontFamily: "Kanit",
                 fontWeight: '500',
             }
         }

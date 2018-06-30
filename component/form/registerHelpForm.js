@@ -10,6 +10,7 @@ import {
 
 } from "react-native";
 import randomstringPromise from 'randomstring-promise';
+import { Font } from "expo";
 import Communications from 'react-native-communications';
 import { StackNavigator } from "react-navigation";
 import { Form, Item, Input, Label, Picker, Icon } from 'native-base'
@@ -38,12 +39,17 @@ class FormAddressRegister extends Component {
     let { verifycode, email } = this.state
     randomstringPromise(10)
       .then((verifycode) => {
-        this.setState({ verifycode : verifycode })
+        this.setState({ verifycode: verifycode })
         // console.log(code);  // u8KNs7aAw0DCOKO1MdEgVIcF2asajrdd
         console.log(verifycode)
         this.props.setVerify(verifycode)
       });
     this.setState({ email: this.props.profile.profile.email })
+  }
+  componentDidMount() {
+    Font.loadAsync({
+      'kanit': require('../../assets/fonts/Kanit-Light.ttf'),
+    });
   }
 
 
@@ -51,8 +57,8 @@ class FormAddressRegister extends Component {
     let { verifycode, statusVerify } = this.state
     Communications.email([this.state.email], null, null, 'GuuRun Code Verify', 'VerifyCode is : ' + this.state.verifycode)
     this.props.goEvent(firstname, lastname, relation, tel, verifycode, statusVerify);
-    this.props.setHelp({ firstname, lastname, relation, tel,verifycode });
-    
+    this.props.setHelp({ firstname, lastname, relation, tel, verifycode });
+
   };
 
   render() {
@@ -144,7 +150,7 @@ const styles = StyleSheet.create({
   },
   titleText: {
     fontSize: 15,
-    fontFamily: "kanit",
+    fontFamily: 'kanit',
     color: "#fc561f"
   },
   contectTitle: {
@@ -161,7 +167,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     height: 35,
     marginTop: 15,
-    fontFamily: "kanit"
+    fontFamily: 'kanit'
   },
 
   submitContainer: {
@@ -181,7 +187,7 @@ const styles = StyleSheet.create({
     fontWeight: "700",
     fontSize: 16,
     color: "#fff",
-    fontFamily: "kanit"
+    fontFamily: 'kanit'
   },
   viewPicker: {
     flexDirection: 'row'

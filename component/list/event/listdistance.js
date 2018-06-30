@@ -8,6 +8,7 @@ import {
     ImageBackground,
     TouchableOpacity
 } from 'react-native';
+import { Font } from "expo";
 import { connect } from 'react-redux'
 import axios from 'axios'
 import api from '../../../config/api_key'
@@ -31,6 +32,9 @@ class ListDistance extends Component {
     }
 
     componentDidMount() {
+        Font.loadAsync({
+            'kanit': require('../../../assets/fonts/Kanit-Light.ttf'),
+        });
         const uri = req[0].uspGetCourseLists
         let data = ({
             params: [

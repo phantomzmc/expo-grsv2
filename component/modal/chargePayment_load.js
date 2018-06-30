@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
 import { StyleSheet, View } from "react-native";
 import { Spinner, Icon, Text, Thumbnail } from "native-base";
+import { Font } from 'expo'
 
 class ChargePaymentLoad extends Component {
     state = {
         layout_loading: true,
+    }
+    componentDidMount() {
+        Font.loadAsync({
+            'kanit': require('../../assets/fonts/Kanit-Light.ttf'),
+        });
     }
     render() {
         return (
@@ -13,7 +19,7 @@ class ChargePaymentLoad extends Component {
                     <View>
                         <Spinner />
                         <View style={{ paddingVertical: 10, alignItems: "center" }}>
-                            <Text style={{ fontSize: 18, fontFamily: "kanit" }}>ระบบกำลังทำการตรวจสอบ</Text>
+                            <Text style={{ fontSize: 18, fontFamily: 'kanit' }}>ระบบกำลังทำการตรวจสอบ</Text>
                         </View>
                     </View>
                 }

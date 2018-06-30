@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, Image } from 'react-native';
 import { Card, CardItem, Body, Button, Text, Icon } from "native-base";
+import {  } from "expo";
 
 class ModalHistory extends Component {
     state = {
@@ -12,7 +13,11 @@ class ModalHistory extends Component {
         address: "106/13 หนองหอย เมืองเชียงใหม่ เชียงใหม่ 50000",
         date: "22/05/2018"
     }
-
+    componentDidMount(){
+        Font.loadAsync({
+            'kanit': require('../../assets/fonts/Kanit-Light.ttf'),
+        });
+    }
     render() {
         return (
             <Card>
@@ -61,7 +66,7 @@ class ModalHistory extends Component {
                     <View style={{ alignItems: "center" }}>
                         <Button rounded light onPress={this.props.toggleModal} >
                             <Icon name="ios-remove-circle-outline" />
-                            <Text style={{ fontFamily: "kanit" }}>ปิด</Text>
+                            <Text style={{ fontFamily: 'kanit' }}>ปิด</Text>
                         </Button>
                     </View>
                 </CardItem>

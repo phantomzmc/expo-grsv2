@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { View, Text, StyleSheet, TouchableOpacity, Alert, Image } from "react-native";
+import { Font } from "expo";
 import { Form, Item, Input, Label } from 'native-base'
 import ProvinceForm from './addressForm-province'
 import AmphoeForm from './addressForm-amphoe'
@@ -21,6 +22,11 @@ class FormAddressRegister extends Component {
       postNumber: "",
       province: ""
     };
+  }
+  componentDidMount(){
+    Font.loadAsync({
+      'kanit': require('../../assets/fonts/Kanit-Light.ttf'),
+  });
   }
   passProvince(city) {
     let { province } = this.state
@@ -122,7 +128,7 @@ const styles = StyleSheet.create({
   },
   titleText: {
     fontSize: 15,
-    fontFamily: "kanit",
+    fontFamily: 'kanit',
     color: '#fc561f'
   },
   contectTitle: {
@@ -139,7 +145,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     height: 35,
     marginTop: 15,
-    fontFamily: "kanit"
+    fontFamily: 'kanit'
   },
   conlorsegment: {
     marginTop: 10
@@ -156,7 +162,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     height: 35,
     marginTop: 15,
-    fontFamily: "kanit"
+    fontFamily: 'kanit'
   },
   submitContainer: {
     marginTop: 30,
@@ -175,7 +181,7 @@ const styles = StyleSheet.create({
     fontWeight: "700",
     fontSize: 16,
     color: "#fff",
-    fontFamily: "kanit"
+    fontFamily: 'kanit'
   },
   datepicker: {
     padding: 50

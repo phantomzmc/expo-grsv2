@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { View, StyleSheet, Text, ImageBackground } from 'react-native'
-
+import { Font } from "expo";
 import { connect } from 'react-redux'
 
 class SummaryTotal extends Component {
@@ -14,6 +14,9 @@ class SummaryTotal extends Component {
         clearInterval(this._interval);
     }
     componentDidMount() {
+        Font.loadAsync({
+            'kanit': require('../../assets/fonts/Kanit-Light.ttf'),
+        });
         this._interval = setInterval(() => {
             this.setState({ totalRegister: this.props.event.totalRegister })
         }, 500);

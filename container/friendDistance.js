@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import FriendInEvent from '../component/list/listFriend/frienInEvent'
 import { View, StyleSheet, TouchableOpacity, Text, ScrollView } from 'react-native';
-import { Footer } from "native-base";
+import { Font } from 'expo'
 import { connect } from 'react-redux'
 
 import HeaderTeam from '../component/items/headerTeam'
@@ -13,7 +13,11 @@ class FriendDistance extends Component {
         price: [],
         totals: 0
     }
-
+    componentDidMount() {
+        Font.loadAsync({
+            'kanit': require('../assets/fonts/Kanit-Light.ttf'),
+        });
+    }
     onButtonChangePayment = () => {
         this.props.navigation.navigate("ButtonChangePayment")
     }
@@ -96,9 +100,9 @@ const styles = StyleSheet.create({
         fontWeight: '500',
         fontSize: 15,
         color: '#fff',
-        fontFamily: 'Kanit',
+        fontFamily: 'kanit',
     },
 })
 
 
-export default connect(mapStateToProps,mapDispatchToProps)(FriendDistance)
+export default connect(mapStateToProps, mapDispatchToProps)(FriendDistance)

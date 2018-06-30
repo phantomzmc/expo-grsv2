@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { View, StyleSheet, Text, TouchableOpacity, Alert } from 'react-native'
+import { Font } from "expo";
 import { Container, Button, Form, Input, Item, Label } from 'native-base'
 import { connect } from 'react-redux'
 import { map } from 'mobx';
@@ -15,6 +16,11 @@ class ResetPasswordForm extends Component {
     componentWillMount() {
         console.log(this.props.profile.profile.userid)
         console.log(this.props.profile.profile.email)
+    }
+    componentDidMount(){
+        Font.loadAsync({
+            'kanit': require('../../assets/fonts/Kanit-Light.ttf'),
+        });
     }
     checkResetVerify(userid, email) {
         if (this.state.userid === this.props.profile.profile.userid && this.state.email === this.props.profile.profile.email) {
@@ -130,7 +136,7 @@ const styles = StyleSheet.create({
         fontWeight: "700",
         fontSize: 16,
         color: "#fff",
-        fontFamily: "kanit"
+        fontFamily: 'kanit'
     },
 })
 

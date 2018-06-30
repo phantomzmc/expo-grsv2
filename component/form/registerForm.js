@@ -9,6 +9,7 @@ import {
   Alert
 } from "react-native";
 import DatePicker from 'react-native-datepicker'
+import { Font } from "expo";
 import axios from 'axios'
 import { Form, Item, Input, Label, Tabs, Tab, TabHeading, Icon, Toast } from 'native-base'
 import req from '../../config/uri_req'
@@ -291,7 +292,7 @@ const styles = StyleSheet.create({
   },
   titleText: {
     fontSize: 15,
-    fontFamily: "kanit",
+    fontFamily: 'kanit',
     color: "#fc561f"
   },
   contectTitle: {
@@ -323,7 +324,7 @@ const styles = StyleSheet.create({
     fontWeight: "700",
     fontSize: 16,
     color: "#fff",
-    fontFamily: "kanit"
+    fontFamily: 'kanit'
   },
 
   datePickerText: {
@@ -331,25 +332,25 @@ const styles = StyleSheet.create({
     paddingLeft: 30,
     width: "80%",
     justifyContent: "center",
-    fontFamily: "kanit"
+    fontFamily: 'kanit'
   },
   containerDatePicker: {
     flexDirection: 'row'
   },
   headForm: {
-    fontFamily: "kanit",
+    fontFamily: 'kanit',
     fontSize: 16,
     paddingTop: 20
   },
   textLabel: {
     fontSize: 14,
-    fontFamily: "kanit"
+    fontFamily: 'kanit'
   },
   tabStyle: {
     backgroundColor: '#fff'
   },
   tabGender: {
-    fontFamily: "kanit",
+    fontFamily: 'kanit',
     paddingHorizontal: 10,
     color: "#FC561F"
   }

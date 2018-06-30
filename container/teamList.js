@@ -3,10 +3,8 @@ import { View, Text, StyleSheet, ScrollView, TouchableOpacity, StatusBar } from 
 import { Container, Header, Item, Input, Button, Tab, Tabs, TabHeading, Icon } from 'native-base';
 import Modal from "react-native-modal";
 import axios from 'axios'
-
+import { Font } from "expo";
 import datafriend from '../component/list/listFriend/dataFriend'
-
-import ButtonChage from '../component/items/bottonChage'
 import HeaderProfile from '../component/items/header_profile.js'
 import EventListFriend from '../component/list/listFriend/eventListFriend'
 import HeaderTeam from '../component/items/headerTeam'
@@ -36,6 +34,11 @@ class TeamList extends Component {
             addStatus: [],
             datafriendlist: []
         }
+    }
+    componentDidMount(){
+        Font.loadAsync({
+            'kanit': require('../assets/fonts/Kanit-Light.ttf'),
+        });
     }
     showModal() {
         let { searchText } = this.state
@@ -199,7 +202,7 @@ const styles = StyleSheet.create({
         fontWeight: '500',
         fontSize: 15,
         color: '#fff',
-        fontFamily: 'Kanit',
+        fontFamily: 'kanit',
     },
     textTile: {
         padding: 10,

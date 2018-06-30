@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
+import { Font } from "expo";
 import { connect } from 'react-redux'
 
 class DetailRegister extends Component {
@@ -10,6 +11,9 @@ class DetailRegister extends Component {
         numberInvoice: "00"
     }
     componentDidMount() {
+        Font.loadAsync({
+            'kanit': require('../../assets/fonts/Kanit-Light.ttf'),
+        });
         this.setState({
             address: this.props.address.user.adress + " " +
                 this.props.address.user.subdistric + " " +

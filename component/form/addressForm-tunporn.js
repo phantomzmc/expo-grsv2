@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { StyleSheet, Text, View, ScrollView, TouchableOpacity, Alert } from 'react-native';
 import { Form, Input, Label, Item, Button } from "native-base";
 import SearchInput, { createFilter } from 'react-native-search-filter';
+import { Font } from "expo";
 import axios from 'axios'
 import { connect } from 'react-redux'
 import req from '../../config/uri_req'
@@ -22,6 +23,11 @@ class TambonForm extends Component {
             tumporn: "",
             isItems: true
         }
+    }
+    componentDidMount(){
+        Font.loadAsync({
+            'kanit': require('../../assets/fonts/Kanit-Light.ttf'),
+        });
     }
     componentDidUpdate(prevProps, prevState) {
         if (this.state.tumporn && prevState.tumporn) {
@@ -114,7 +120,7 @@ const styles = StyleSheet.create({
     },
     text: {
         fontSize: 14,
-        fontFamily: "kanit"
+        fontFamily: 'kanit'
     },
     list: {
     },
@@ -126,7 +132,7 @@ const styles = StyleSheet.create({
         borderBottomWidth: 1
     },
     textValue: {
-        fontFamily: "kanit"
+        fontFamily: 'kanit'
     }
 });
 

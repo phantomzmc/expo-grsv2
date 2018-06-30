@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { View, Text, StyleSheet, Image, Alert } from 'react-native';
-
+import { Font } from "expo";
 import { connect } from 'react-redux'
 import Switch from 'react-native-switch-pro'
-import Test from './test'
 
 class PhotoPlus extends Component {
     static propTypes = {
@@ -20,6 +19,11 @@ class PhotoPlus extends Component {
             // priceEvent: this.props.event.distanceEvent.price,
             totalPrice: ""
         }
+    }
+    componentDidMount(){
+        Font.loadAsync({
+            'kanit': require('../../assets/fonts/Kanit-Light.ttf'),
+        });
     }
     componentWillMount(){
         this.setState({
@@ -55,7 +59,7 @@ class PhotoPlus extends Component {
         return (
             <View style={styles.container}>
                 <Text style={{
-                    fontFamily: "Kanit"
+                    fontFamily: 'kanit'
                 }}>{this.props.titleName}
                 </Text>
                 <Switch

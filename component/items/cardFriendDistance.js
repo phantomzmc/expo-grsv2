@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { View, FlatList, StyleSheet, Alert, TouchableOpacity, Image, ScrollView } from 'react-native';
 import { Container, Header, Content, Card, CardItem, Thumbnail, Text, Button, Icon, Left, Body, Right } from 'native-base';
 import Switch from 'react-native-switch-pro'
-
+import {Font } from 'expo'
 import ListFriendDistance from '../list/event/listFriendDistance'
 import ListFriendShirth from '../list/listShirt/listFriendShrit'
 import DropDownShirth from '../list/listShirt/dropdownShirt'
@@ -27,6 +27,9 @@ class CradFriendDistance extends Component {
         this.getDataRegisFriend = this.getDataRegisFriend.bind(this)
     }
     componentDidMount() {
+        Font.loadAsync({
+            'kanit': require('../../assets/fonts/Kanit-Light.ttf'),
+          });
         this.setState({ items: this.props.distance })
     }
     onPressDeleteItem() {
@@ -78,8 +81,8 @@ class CradFriendDistance extends Component {
                     <Left>
                         <Thumbnail source={{ uri: items.PicProfile }} />
                         <Body style={{ paddingHorizontal: 5 }}>
-                            <Text style={{ fontFamily: "kanit" }}>{items.FirstName} - {items.LastName}</Text>
-                            <Text note style={{ fontFamily: "kanit" }}>{items.gen} -  {items.age}</Text>
+                            <Text style={{ fontFamily: 'kanit' }}>{items.FirstName} - {items.LastName}</Text>
+                            <Text note style={{ fontFamily: 'kanit' }}>{items.gen} -  {items.age}</Text>
                         </Body>
                     </Left>
                     <Right>
@@ -131,7 +134,7 @@ class CradFriendDistance extends Component {
                 <CardItem>
                     <Left>
                         <Icon name="ios-camera-outline" style={{ fontSize: 20 }} />
-                        <Text style={{ fontFamily: "kanit", fontSize: 16 }}>Photo + Service</Text>
+                        <Text style={{ fontFamily: 'kanit', fontSize: 16 }}>Photo + Service</Text>
                     </Left>
                     <Right>
                         <Switch
@@ -175,7 +178,7 @@ const styles = StyleSheet.create({
         // justifyContent: 'center'
     },
     textLabelSize: {
-        fontFamily: 'Kanit'
+        fontFamily: 'kanit'
     },
     dropdownstyle: {
         flexDirection: 'column',

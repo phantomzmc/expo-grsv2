@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, Text, TouchableOpacity } from 'react-native'
 import { Container, Button, Form, Input, Item, Label } from 'native-base'
+import { Font } from "expo";
 import { connect } from 'react-redux'
 import axios from 'axios'
 
@@ -13,6 +14,11 @@ class FormVerifyCode extends Component {
             code: "",
             statusVerify: 1
         }
+    }
+    componentDidMount(){
+        Font.loadAsync({
+            'kanit': require('../../assets/fonts/Kanit-Light.ttf'),
+        });
     }
     checkCodeVerify(code) {
         this.props.getVerify(code)
@@ -100,7 +106,7 @@ const styles = StyleSheet.create({
         fontWeight: "700",
         fontSize: 16,
         color: "#fff",
-        fontFamily: "kanit"
+        fontFamily: 'kanit'
     },
     containerNewCode: {
         flexDirection: 'row',

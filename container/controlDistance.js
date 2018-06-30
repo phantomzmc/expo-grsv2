@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { View, StyleSheet, TouchableOpacity, Alert, StatusBar } from 'react-native';
 import { Container, Header, Tab, Tabs, TabHeading, Icon, Text, Button } from 'native-base';
-import { StackNavigator } from 'react-navigation';
+import { Font } from "expo";
 import { connect } from 'react-redux'
-import Login from '../container/login'
 import RegisterDistance from '../container/registerDistance'
 import SummaryTotal from '../component/items/summary'
 import HeaderTeam from '../component/items/headerTeam'
@@ -22,7 +21,11 @@ class ControlDistance extends Component {
         }
         this.goAddTeam = this.goAddTeam.bind(this)
     }
-
+    componentDidMount(){
+        Font.loadAsync({
+            'kanit': require('../assets/fonts/Kanit-Light.ttf'),
+        });
+    }
     goLogin = () => {
         console.log(this.state.login)
         this.props.setLogin(this.state.login)

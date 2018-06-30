@@ -8,6 +8,7 @@ import {
     ScrollView,
     TouchableOpacity
 } from 'react-native';
+import { Font } from 'expo'
 import { Card, Icon } from "native-base";
 import ImagePicker from 'react-native-image-picker';
 
@@ -25,6 +26,11 @@ class TranferView extends Component {
             ImageSource: null,
             statusButton: false
         }
+    }
+    componentDidMount() {
+        Font.loadAsync({
+            'kanit': require('../../assets/fonts/Kanit-Light.ttf'),
+        });
     }
     selectPhotoTapped() {
         const options = {
@@ -103,7 +109,7 @@ class TranferView extends Component {
                                 {this.state.ImageSource === null ?
                                     <View style={{ flexDirection: "row" }}>
                                         <Icon name="camera" type="Entypo" style={{ fontSize: 20, color: "#FC561F", marginRight: 10 }} />
-                                        <Text style={{ fontFamily: "kanit", color: "#FC561F" }}>เลือกรูปภาพ</Text>
+                                        <Text style={{ fontFamily: 'kanit', color: "#FC561F" }}>เลือกรูปภาพ</Text>
                                     </View> :
                                     <Image style={styles.ImageContainer} source={this.state.ImageSource} />
                                 }
@@ -216,7 +222,7 @@ const styles = StyleSheet.create({
         fontWeight: '500',
         fontSize: 15,
         color: '#fff',
-        fontFamily: 'Kanit'
+        fontFamily: 'kanit'
     },
     ImageContainer: {
         width: 250,
@@ -233,7 +239,7 @@ const styles = StyleSheet.create({
         fontSize: 22,
         fontWeight: '300',
         padding: 20,
-        fontFamily: "Kanit"
+        fontFamily: 'kanit'
     },
     textDetail: {
         fontFamily: 'kanit',

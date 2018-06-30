@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Alert, StatusBar 
 import { Container } from 'native-base'
 import { connect } from 'react-redux'
 import { captureScreen } from "react-native-view-shot";
+import { Font } from "expo";
 import Modal from "react-native-modal";
 import axios from 'axios'
 import req from '../config/uri_req'
@@ -33,6 +34,9 @@ class TotalLayout extends Component {
         this.setState({ modalLoading: true })
     }
     componentDidMount() {
+        Font.loadAsync({
+            'kanit': require('../assets/fonts/Kanit-Light.ttf'),
+        });
         this.addRegister()
         setTimeout(() => {
             if (this.state.modalLoading == true) {

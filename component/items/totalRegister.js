@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, Image, } from 'react-native';
+import { Font } from "expo";
 import { Text } from 'native-base'
 import { connect } from 'react-redux'
 
@@ -13,6 +14,9 @@ class TotalRegister extends Component {
         detailPleace2: false,
     }
     componentDidMount() {
+        Font.loadAsync({
+            'kanit': require('../../assets/fonts/Kanit-Light.ttf'),
+        });
         this.setState({
             total: this.props.event.totalPrice,
             totalRegister: this.props.event.totalRegister,

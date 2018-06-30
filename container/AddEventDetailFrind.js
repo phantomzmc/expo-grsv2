@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, ScrollView,TouchableOpacity} from 'react-native';
-import { StackNavigator } from 'react-navigation';
-
+import { Font } from "expo";
 import ListFriendDistance from '../component/list/event/listFriendDistance'
 import ListShirth from '../component/list/listShirt/listShirt'
 
 
 class AddEventFriend extends Component {
-
+    componentDidMount(){
+        Font.loadAsync({
+            'kanit': require('../assets/fonts/Kanit-Light.ttf'),
+        });
+    }
     gotoCrediPayment = () => {
         this.props.navigation.navigate('CrediPayment')
     }
@@ -63,7 +66,7 @@ const styles = StyleSheet.create({
         fontWeight: '500',
         fontSize: 15,
         color: '#fff',
-        fontFamily: 'Kanit',
+        fontFamily: 'kanit',
 
     }
 })

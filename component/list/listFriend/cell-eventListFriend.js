@@ -3,8 +3,7 @@ import { StyleSheet, Image, Text } from "react-native";
 import { View, Card, CardItem } from 'native-base';
 import CheckBox from 'react-native-checkbox-heaven';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import data from '../listevent/data';
-
+import { Font } from "expo";
 class CellEventListFriend extends Component {
     constructor(props) {
         super(props)
@@ -18,6 +17,9 @@ class CellEventListFriend extends Component {
         this.checkFavorite = this.checkFavorite.bind(this)
     }
     componentDidMount() {
+        Font.loadAsync({
+            'kanit': require('../../../assets/fonts/Kanit-Light.ttf'),
+        });
         this.setState({ item: this.props.items })
         this.checkFavorite()
         console.log(this.props.items)

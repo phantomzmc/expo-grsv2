@@ -38,7 +38,7 @@ class HeaderTeam extends Component {
 
 const styles = StyleSheet.create({
     title: {
-        fontFamily: "kanit",
+        fontFamily: 'kanit',
         color: "#fff",
         fontSize: 14
     }

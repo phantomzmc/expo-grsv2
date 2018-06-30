@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, Image,TouchableHighlight, TouchableOpacity } from 'react-native';
+import { Font } from "expo";
 import data from './data.js';
 
 export default class CellListEvent extends Component {
+    componentDidMount(){
+        Font.loadAsync({
+            'kanit': require('../../../assets/fonts/Kanit-Light.ttf'),
+        });
+    }
     render() {
         return (
             <View style={styles.background}>
@@ -51,12 +57,12 @@ const styles = StyleSheet.create({
     },
     dateText: {
         fontSize: 36,
-        fontFamily: "Kanit"
+        fontFamily: 'kanit'
     },
     monthText: {
         color: '#FC561F',
         fontSize: 20,
-        fontFamily: "Kanit"
+        fontFamily: 'kanit'
     },
     containerEventName: {
         flex: 1,
@@ -67,7 +73,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: 25,
         paddingVertical: 15,
         fontSize: 18,
-        fontFamily: "Kanit"
+        fontFamily: 'kanit'
     },
 
 })

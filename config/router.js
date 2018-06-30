@@ -35,12 +35,6 @@ export default StackNavigator({
     //         header : () => null
     //     }
     // },
-    SingleLogin: {
-        screen: SingleLogin,
-        navigationOptions: {
-            header: () => null
-        }
-    },
     EventList: {
         screen: EventList,
         navigationOptions: {

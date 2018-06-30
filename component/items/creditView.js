@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { Form, Item, Input, Label, Icon, Card } from 'native-base'
 import { connect } from 'react-redux'
+import { Font } from "expo";
 import Modal from "react-native-modal";
 import Omise from 'omise-react-native';
 import ChargePaymentLoad from '../modal/chargePayment_load'
@@ -30,7 +31,11 @@ class CreditView extends Component {
         }
         this.genTokenCredit = this.genTokenCredit.bind(this)
     }
-
+    componentDidMount(){
+        Font.loadAsync({
+            'kanit': require('../../assets/fonts/Kanit-Light.ttf'),
+        });
+    }
     async genTokenCredit(nameCredit, numberCredit, expCredit,yearCredit, cvcCredit) {
         const data = await Omise.createToken({
             'card': {
@@ -305,7 +310,7 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         borderWidth: 1.5,
         marginBottom: 20,
-        fontFamily: "Kanit"
+        fontFamily: 'kanit'
     },
     container3: {
         flexDirection: 'row',
@@ -319,7 +324,7 @@ const styles = StyleSheet.create({
         fontSize: 22,
         fontWeight: '300',
         padding: 20,
-        fontFamily: "Kanit"
+        fontFamily: 'kanit'
     },
     submitContainer: {
         marginTop: 30,
@@ -338,7 +343,7 @@ const styles = StyleSheet.create({
         fontWeight: '500',
         fontSize: 15,
         color: '#fff',
-        fontFamily: "Kanit"
+        fontFamily: 'kanit'
     },
     showDetail: {
         alignItems: 'center'
@@ -357,7 +362,7 @@ const styles = StyleSheet.create({
         fontWeight: '500',
         fontSize: 15,
         color: '#FC561F',
-        fontFamily: "Kanit"
+        fontFamily: 'kanit'
     },
     headForm: {
         fontFamily: 'kanit',

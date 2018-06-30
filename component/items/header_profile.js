@@ -109,7 +109,7 @@ class HeaderProfile extends Component {
                             {this.state.ImageSource === null ?
                                 <View style={styles.imgAvatar} >
                                     <Icon active name="user-circle-o" type="FontAwesome" size={10} />
-                                    <Text style={{ fontFamily: "kanit", fontSize: 12, paddingTop: 10 }}>เพิ่มรูปภาพ</Text>
+                                    <Text style={{ fontFamily: 'kanit', fontSize: 12, paddingTop: 10 }}>เพิ่มรูปภาพ</Text>
                                 </View> :
                                 <Image style={styles.imgAvatar} source={this.state.ImageSource} />
                             }

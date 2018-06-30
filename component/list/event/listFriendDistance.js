@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, FlatList, StyleSheet, TouchableHighlight } from 'react-native';
+import { Font } from "expo";
 import { Left, Right } from "native-base";
 import { connect } from 'react-redux'
 import axios from 'axios'
@@ -24,6 +25,9 @@ class ListFriendDistance extends Component {
     }
 
     componentDidMount() {
+        Font.loadAsync({
+            'kanit': require('../../../assets/fonts/Kanit-Light.ttf'),
+        });
         const { id, userid } = this.state
         const uri = 'http://api.shutterrunning2014.com/api/v2/grsv2m/_proc/Main.uspGetCourseLists(' + id + ',' + userid + ')'
         axios.get(uri, {

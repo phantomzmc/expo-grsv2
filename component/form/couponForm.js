@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, Image, StyleSheet, TextInput, TouchableOpacity, Alert, StatusBar } from 'react-native';
 import { Container, Form, Item, Label, Input } from "native-base";
+import { Font } from "expo";
 import { connect } from 'react-redux'
 import axios from 'axios'
 import req from '../../config/uri_req'
@@ -24,6 +25,11 @@ class CouponForm extends Component {
         this.checkPromoCode = this.checkPromoCode.bind(this)
         this.checkOutput = this.checkOutput.bind(this)
         this.gotoAddress = this.gotoAddress.bind(this)
+    }
+    componentDidMount(){
+        Font.loadAsync({
+            'kanit': require('../../assets/fonts/Kanit-Light.ttf'),
+        });
     }
     gotoAddress() {
         this.props.navigation.navigate('AddressLayout')

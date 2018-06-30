@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, StatusBar } from 'react-native';
 import { Container, Header, Tab, Tabs, TabHeading, Icon, Button, ScrollableTab } from 'native-base';
+import { Font } from "expo";
 import { connect } from 'react-redux'
 import TranferPayment from '../../container/tranferPayment'
 import TotalRegister from '../../component/items/totalRegister'
@@ -18,6 +19,11 @@ class ButtonChangeTranfer extends Component {
             title: "ชำระด้วยการโอนเงิน",
             pageNumber: 0
         }
+    }
+    componentDidMount(){
+        Font.loadAsync({
+            'kanit': require('../../assets/fonts/Kanit-Light.ttf'),
+        });
     }
     gotoShowDetail = () => {
         this.props.navigation.navigate('TotalRegister')

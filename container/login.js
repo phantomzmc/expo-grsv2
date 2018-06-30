@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, ImageBackground, TouchableOpacity, Alert, TextInput } from 'react-native';
+import { Font } from "expo";
 import { connect } from 'react-redux'
 import axios from 'axios'
 import req from '../config/uri_req'
@@ -18,7 +19,11 @@ class Login extends Component {
             status: [],
         }
     }
-
+    componentDidMount(){
+        Font.loadAsync({
+            'kanit': require('../assets/fonts/Kanit-Light.ttf'),
+        });
+    }
     checkLoginSever() {
         let { username, password } = this.state
         let uri = req[0].uspSignIn

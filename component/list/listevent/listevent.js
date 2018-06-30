@@ -200,12 +200,12 @@ const styles = StyleSheet.create({
     },
     dateText: {
         fontSize: 36,
-        fontFamily: "kanit"
+        fontFamily: 'kanit'
     },
     monthText: {
         color: '#FC561F',
         fontSize: 20,
-        fontFamily: "kanit"
+        fontFamily: 'kanit'
     },
     containerEventName: {
         flex: 1
@@ -221,7 +221,7 @@ const styles = StyleSheet.create({
         paddingRight: 60,
         paddingVertical: 15,
         fontSize: 16,
-        fontFamily: "kanit"
+        fontFamily: 'kanit'
     },
     listView: {
         paddingTop: 10,

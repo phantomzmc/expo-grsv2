@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, ScrollView, StyleSheet, TouchableHighlight, Image, Alert, StatusBar } from 'react-native';
 import { Container, Content, Card, CardItem, TabHeading } from 'native-base';
 import { connect } from 'react-redux'
+import { Font } from "expo";
 import ListShirt from '../component/list/listShirt/listShirt'
 import PhotoPlus from '../component/items/photoPlus'
 import SummaryTotal from '../component/items/summary'
@@ -18,6 +19,9 @@ class ShirtPhotoPlus extends Component {
         shirt: ""
     }
     componentDidMount = () => {
+        Font.loadAsync({
+            'kanit': require('../assets/fonts/Kanit-Light.ttf'),
+        });
         if (this.props.event.distanceEvent.statusPhotoPlus == 1) {
             this.setState({
                 isItems: !this.state.isItems,
@@ -155,7 +159,7 @@ const styles = StyleSheet.create({
         fontSize: 22,
         fontWeight: '300',
         padding: 20,
-        fontFamily: "Kanit",
+        fontFamily: 'kanit',
     },
     submitContainer: {
         marginTop: 30,
@@ -185,10 +189,10 @@ const styles = StyleSheet.create({
         fontWeight: '500',
         fontSize: 14,
         color: '#fff',
-        fontFamily: "Kanit",
+        fontFamily: 'kanit',
     },
     textSizeCard: {
-        fontFamily: "Kanit",
+        fontFamily: 'kanit',
         fontSize: 20,
         justifyContent: 'center',
         alignItems: 'center',

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, View } from "react-native";
 import { Button, Icon, Text, Thumbnail } from "native-base";
+import { Font } from "expo";
 
 class ModalAddFriend extends Component {
     state = {
@@ -14,6 +15,9 @@ class ModalAddFriend extends Component {
         }
     }
     componentDidMount() {
+        Font.loadAsync({
+            'kanit': require('../../assets/fonts/Kanit-Light.ttf'),
+        });
         this.setState({ newitem: this.props.outputfriend })
         console.log(this.state.newitem)
     }
@@ -27,13 +31,13 @@ class ModalAddFriend extends Component {
             <View style={styles.modalContainer}>
                 <Thumbnail source={{ uri: "https://scontent.fbkk9-2.fna.fbcdn.net/v/t1.0-1/p320x320/31454067_1642595545789324_6450015206967595916_n.jpg?_nc_cat=0&oh=c1bc77925e6ad8268667693dae3da916&oe=5B86F157" }} />
                 <View style={{ paddingVertical: 10, alignItems: "center" }}>
-                    <Text style={{ fontSize: 18, fontFamily: "kanit" }}>{newitem.FirstName} - {newitem.LastName}</Text>
-                    <Text style={{ fontSize: 16, fontFamily: "kanit" }}>{newitem.Gender} - {newitem.NickName}</Text>
+                    <Text style={{ fontSize: 18, fontFamily: 'kanit' }}>{newitem.FirstName} - {newitem.LastName}</Text>
+                    <Text style={{ fontSize: 16, fontFamily: 'kanit' }}>{newitem.Gender} - {newitem.NickName}</Text>
                 </View>
                 <View style={{ flexDirection: "row", justifyContent: "space-around", paddingVertical: 10 }}>
                     <Button iconLeft rounded light onPress={this.props.toggleModal} style={{ marginHorizontal: 10, justifyContent: "center" }}>
                         <Icon name="ios-close-outline" />
-                        <Text style={{ fontFamily: "kanit" }}>ปิด</Text>
+                        <Text style={{ fontFamily: 'kanit' }}>ปิด</Text>
                     </Button>
                     <Button iconLeft rounded success onPress={this.onAddFriend.bind(this)} onPressOut={this.props.toggleModal} style={{ marginHorizontal: 10, justifyContent: "center" }}>
                         <Icon name="ios-add-outline" style={{ color: "#fff" }} />

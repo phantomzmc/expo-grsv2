@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
 import { Form, Item, Input, Label } from 'native-base'
+import { Font } from "expo";
 import CheckBox from 'react-native-checkbox-heaven';
 import { connect } from 'react-redux'
 
@@ -23,6 +24,9 @@ class AddressForm extends Component {
         }
     }
     componentDidMount = () => {
+        Font.loadAsync({
+            'kanit': require('../../assets/fonts/Kanit-Light.ttf'),
+        });
         this.setState({
             fullname: this.props.userprofile.userprofile.FirstName,
             lastname: this.props.userprofile.userprofile.LastName,
@@ -192,7 +196,7 @@ const styles = StyleSheet.create({
         fontWeight: '500',
         fontSize: 15,
         color: '#fff',
-        fontFamily: 'Kanit',
+        fontFamily: 'kanit',
     },
     headForm: {
         fontFamily: 'kanit',
@@ -205,7 +209,7 @@ const styles = StyleSheet.create({
     },
     labelStyle: {
         padding: 20,
-        fontFamily: "kanit",
+        fontFamily: 'kanit',
         fontSize: 16
     },
     checkSubmit: {

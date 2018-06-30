@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-
 import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Button } from 'react-native';
-import { StackNavigator } from 'react-navigation';
-
+import { Font } from "expo";
 import { connect } from 'react-redux'
 import HeaderProfile from '../component/items/header_profile.js'
 import ListDistance from '../component/list/event/listdistance'
-import ButtonSubmit from '../component/items/buttonSubmit';
 
 
 class RegisterDistance extends Component {
@@ -26,6 +22,11 @@ class RegisterDistance extends Component {
             }
         }
         // this.gotoShirtPhotoPlus = this.gotoShirtPhotoPlus.bind(this)
+    }
+    componentDidMount(){
+        Font.loadAsync({
+            'kanit': require('../assets/fonts/Kanit-Light.ttf'),
+        });
     }
     nextState = () => {
         this.props.navigation.navigate("ShirtPhotoPlus")

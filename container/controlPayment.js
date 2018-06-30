@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types';
 import { Text, View, StyleSheet, TouchableOpacity, ScrollView, StatusBar } from "react-native";
 import { Container, Card, CardItem, Content, Body, Item, Icon } from "native-base";
+import { Font } from "expo";
 import { connect } from "react-redux";
 import SummaryTotal from '../component/items/summary'
 import HeaderTeam from "../component/items/headerTeam";
@@ -21,6 +22,11 @@ class ControlPayment extends Component {
         this.setState({
             total : parseFloat(this.props.event.totalPrice)
         })
+    }
+    componentDidMount(){
+        Font.loadAsync({
+            'kanit': require('../assets/fonts/Kanit-Light.ttf'),
+        });
     }
     sumCredit(){
         sum = (this.props.event.totalRegister * 105)/100
@@ -86,7 +92,6 @@ class ControlPayment extends Component {
                     </View>
                 </ScrollView>
                 <SummaryTotal />
-
             </Container>
         )
     }
@@ -127,7 +132,7 @@ const styles = StyleSheet.create({
     labelCard: {
         paddingVertical: 20,
         fontSize: 20,
-        fontFamily: "kanit",
+        fontFamily: 'kanit',
         color: "#FC561F"
     }
 })

@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { View, ScrollView, StyleSheet, TouchableOpacity, AlertIOS, StatusBar } from 'react-native';
 import CheckBox from 'react-native-checkbox-heaven';
 import { Container, Icon, Text, Tab, Tabs, TabHeading, Card, CardItem, Body, Content } from 'native-base';
+import { Font } from "expo";
 import AddressForm from '../component/form/addressForm'
 import GetPleace from '../component/items/getPlece'
 import SummaryTotal from '../component/items/summary'
@@ -48,6 +49,9 @@ class AddressLayout extends Component {
         })
     }
     componentDidMount() {
+        Font.loadAsync({
+            'kanit': require('../assets/fonts/Kanit-Light.ttf'),
+        });
         this.getPleaceItem()
     }
     getPleaceItem() {
@@ -196,7 +200,7 @@ const styles = StyleSheet.create({
     },
     textLabel: {
         fontSize: 12,
-        fontFamily: 'Kanit',
+        fontFamily: 'kanit',
     },
     cradPost: {
         justifyContent: "center",
@@ -204,7 +208,7 @@ const styles = StyleSheet.create({
         flexDirection: "column"
     },
     textTitle: {
-        fontFamily: "kanit",
+        fontFamily: 'kanit',
         fontSize: 14,
         justifyContent: "center",
         alignContent: "center",
@@ -217,7 +221,7 @@ const styles = StyleSheet.create({
     },
     labelStyle: {
         padding: 20,
-        fontFamily: "kanit",
+        fontFamily: 'kanit',
         fontSize: 16
     },
     submitContainer: {
@@ -245,7 +249,7 @@ const styles = StyleSheet.create({
         fontWeight: '500',
         fontSize: 15,
         color: '#fff',
-        fontFamily: 'Kanit',
+        fontFamily: 'kanit',
     },
 })
 

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, FlatList, StyleSheet, TouchableHighlight, ActivityIndicator } from 'react-native';
+import { Font } from "expo";
 import axios from 'axios'
 import { connect } from 'react-redux'
 
@@ -18,6 +19,11 @@ class ListShirt extends Component {
             selected: false
         }
         this.pressDataShirt = this.pressDataShirt.bind(this)
+    }
+    componentDidMount(){
+        Font.loadAsync({
+            'kanit': require('../../../assets/fonts/Kanit-Light.ttf'),
+        });
     }
     componentWillMount() {
         const { CourseID, Gender } = this.state
@@ -84,7 +90,7 @@ class ListShirt extends Component {
                         >
                             <View style={styles.sizeshirt}>
                                 <Text style={this.state.textStatus ? styles.textStatusOnPress : styles.textStatus}>{item.JerseySizeValue} </Text>
-                                <Text style={{ fontFamily: "Kanit", }}> ({item.JerseySizeDesc})</Text>
+                                <Text style={{ fontFamily: 'kanit', }}> ({item.JerseySizeDesc})</Text>
                             </View>
                         </TouchableHighlight>
                     </View>}
@@ -138,10 +144,10 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
     },
     textStatus: {
-        fontFamily: "Kanit",
+        fontFamily: 'kanit',
     },
     textStatusOnPress: {
-        fontFamily: "Kanit",
+        fontFamily: 'kanit',
         color: '#FC561F'
     }
 
